@@ -1,5 +1,5 @@
 .vscode/
-.exe* 
+*.exe 
 build/
 *build.sh
 *tests.sh
