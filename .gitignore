@@ -1,2 +1,5 @@
 .vscode/
 .exe* 
+build/
+*build.sh
+*tests.sh

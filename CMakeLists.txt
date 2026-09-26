@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 4.0.0)
-project(Simulated Annealed LANGUAGES CXX)
+project(SimulatedAnnealed LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 
-add_library(simulated_annealed STATIC main.cpp)
-target_include_directories(simulated_annealed PUBLIC sources)
-target_include_directories(simulated_annealed PUBLIC data)
+add_library(SimulatedAnnealed STATIC main.cpp)
+target_include_directories(SimulatedAnnealed PUBLIC src)
+target_include_directories(SimulatedAnnealed PUBLIC data)
 
 include(FetchContent)
 
@@ -19,8 +19,10 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 add_library(GTest::GTest INTERFACE IMPORTED)
-target_link_libraries(GTest::gtest_main)
+target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
 
 enable_testing()
+
+add_subdirectory(src)
 add_subdirectory(tests)
